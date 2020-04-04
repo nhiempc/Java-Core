@@ -39,6 +39,6 @@ public class DectoHex {
         }
         StringBuilder sb = new StringBuilder();
         sb.append(hex);
-        System.out.println("Tập lục phân của "+x+" là: " +sb.reverse());
+        System.out.println("Thập lục phân của "+x+" là: " +sb.reverse());
     }
 }
