@@ -11,16 +11,10 @@ public class Post {
     private String postKeyword;
     private int postCategoryID;
 
-    public void findByCategory(int categoryID){
-
-    }
-
-    public void viewDetail(int postID){
-
-    }
-
-    public void newest(){
-
+    public Post(int postID, String postTitle, int postCategoryID) {
+        this.postID = postID;
+        this.postTitle = postTitle;
+        this.postCategoryID = postCategoryID;
     }
 
     public int getPostID() {
