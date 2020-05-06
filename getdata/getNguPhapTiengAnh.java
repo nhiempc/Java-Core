@@ -18,7 +18,7 @@ public class getNguPhapTiengAnh {
         Object[] array_url_page = url_page.toArray();
         for (int i =0 ;i<url_page.size();i++){
             Document doc = Jsoup.connect(array_url_page[i].toString()).get();
-            Elements element = doc.select("div[class=panel-body] a");
+            Elements element = doc.select("div[class=panel-body]>a");
             for (Element headline : element) {
                 url_detail_page.add(headline.absUrl("href"));
             }
