@@ -1,7 +1,4 @@
 package lecture8.usermanagement;
-
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class UserManagement {
@@ -48,9 +45,19 @@ public class UserManagement {
         }
         return false;
     }
+    public boolean checkPwExits(String username,User[] users){
+        for (int i=0;i<users.length;i++){
+            if(users[i].getPassword().equals(username)){
+                return true;
+            }else {
+                return false;
+            }
+        }
+        return false;
+    }
     public User findUserByUsername(String username,User[] user){
         for (int i=0;i<user.length;i++){
-            if(user[i].getUsername().equals(username)){
+            if(user[i].getUsername().compareTo(username)==0){
                 return user[i];
             }else {
               return null;
@@ -58,8 +65,15 @@ public class UserManagement {
         }
         return null;
     }
-    public void login(String userName,String password,User[] user){
-
+    public User login(String userName,String password,User[] user){
+        for (int i=0;i<user.length;i++){
+            if(user[i].getUsername().equals(userName)||user[i].getPassword().equals(password)){
+                return user[i];
+            }else{
+                return null;
+            }
+        }
+        return null;
     }
     public int getTotalUser() {
         return totalUser;
