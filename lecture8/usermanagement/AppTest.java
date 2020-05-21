@@ -17,5 +17,10 @@ public class AppTest {
             System.out.println("Nhập tên đăng nhập: ");
             userNameLogin = sc.nextLine();
         }while (userManagement.checkExits(userNameLogin,userArray));
+        String passwordLogin = "";
+        do {
+            System.out.println("Nhập mật khẩu: ");
+            passwordLogin = sc.nextLine();
+        }while (userManagement.checkPwExits(passwordLogin,userArray));
     }
 }
