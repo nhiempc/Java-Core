@@ -36,44 +36,49 @@ public class UserManagement {
         return userArray;
     }
     public boolean checkExits(String username,User[] users){
+        boolean kq = false;
         for (int i=0;i<users.length;i++){
             if(users[i].getUsername().equals(username)){
-                return true;
+                kq = true;
             }else {
-                return false;
+                kq =  false;
             }
         }
-        return false;
+        return kq;
     }
     public boolean checkPwExits(String username,User[] users){
+        boolean kq = false;
         for (int i=0;i<users.length;i++){
             if(users[i].getPassword().equals(username)){
-                return true;
+                kq = true;
             }else {
-                return false;
+                kq = false;
             }
         }
-        return false;
+        return kq;
     }
     public User findUserByUsername(String username,User[] user){
+        User user1 = new User();
         for (int i=0;i<user.length;i++){
             if(user[i].getUsername().compareTo(username)==0){
-                return user[i];
+                user1 = user[i];
             }else {
-              return null;
+              user1 = null;
             }
         }
-        return null;
+        return user1;
     }
     public User login(String userName,String password,User[] user){
+        User user1 = new User();
         for (int i=0;i<user.length;i++){
-            if(user[i].getUsername().equals(userName)||user[i].getPassword().equals(password)){
-                return user[i];
+            if(user[i].getUsername().equals(userName)&&user[i].getPassword().equals(password)){
+                System.out.println("Đăng nhập thành công!");
+                user1 = user[i];
             }else{
-                return null;
+                user1 = null;
             }
         }
-        return null;
+        return user1;
     }
     public int getTotalUser() {
         return totalUser;
